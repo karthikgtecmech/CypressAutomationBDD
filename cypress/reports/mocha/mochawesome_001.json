@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-09T06:18:01.629Z",
+    "end": "2022-08-09T06:18:13.264Z",
+    "duration": 11635,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5457d30d-aae2-4b09-bfa2-090d4823c4dc",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\TestFramework.js",
+      "file": "cypress\\integration\\examples\\TestFramework.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6f0e9762-9191-4493-8c30-606edd2e1589",
+          "title": "My Framework Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My Framework Test Case",
+              "fullTitle": "My Framework Test Suite My Framework Test Case",
+              "timedOut": null,
+              "duration": 8719,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(Cypress.env('url') + '/angularpractice/');\nvar homePage = new _HomePage[\"default\"]();\nvar productPage = new _ProductPage[\"default\"]();\nhomePage.getNameTextfield().type(data.name);\nhomePage.getGender().select(data.gender);\nhomePage.getTwoWayDataBinding().should('have.value', data.name);\nhomePage.getNameTextfield().should('have.attr', 'minlength', '2');\nhomePage.getEnterpreneaur().should('be.disabled');\nhomePage.getShopTab().click();\ndata.productName.forEach(function (element) {\n  cy.selectProduct(element);\n});\nhomePage.getCheckOut().click();\nvar sum = 0;\nproductPage.getProductPriceInCart().each(function ($el, index, $list) {\n  var price = $el.text();\n  var res = price.split(\" \");\n  res = res[1].trim();\n  sum = Number(sum) + Number(res);\n}).then(function () {\n  cy.log(sum);\n});\nproductPage.getTotalPriceInCart().then(function (element) {\n  var totalPrice = element.text();\n  var total = totalPrice.split(\" \");\n  total = total[1].trim();\n  expect(Number(sum)).to.equal(Number(total));\n}); // cy.pause()\nproductPage.getCheckOutProduct().click();\nproductPage.getDeliveryLocationTextBox().type(data.country);\nCypress.config('defaultCommandTimeout', 10000);\ncy.contains(data.country).click();\ncy.screenshot();\ncy.screenshot('Screenshot taken');\nproductPage.getPurchaseButton().click();\nproductPage.getAgreeCheckbox().click({\n  force: true\n});\nproductPage.getPurchaseSuccessMsg().then(function (successMsg) {\n  expect(successMsg.text()).to.contains(data.purchaseSuccessMsg);\n}); //or\nproductPage.getPurchaseSuccessMsg().then(function (element) {\n  var successMsg = element.text();\n  expect(successMsg.includes(data.purchaseSuccessMsg)).to[\"true\"];\n});",
+              "err": {},
+              "uuid": "20937225-febc-4bdc-a9b9-399891577472",
+              "parentUUID": "6f0e9762-9191-4493-8c30-606edd2e1589",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "20937225-febc-4bdc-a9b9-399891577472"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8719,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "screenshotOnRunFailure": true,
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

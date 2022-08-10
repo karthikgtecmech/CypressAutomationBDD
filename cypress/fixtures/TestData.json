@@ -1,0 +1,8 @@
+{
+  "name": "Karthik D",
+  "gender": "Male",
+  "productName": ["Blackberry", "Nokia"],
+  "country": "India",
+  "purchaseSuccessMsg": "Thank you! Your order will be delivered in next few weeks"
+}
+ 

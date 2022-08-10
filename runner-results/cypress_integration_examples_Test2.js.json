@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 1,
+  "passes": 1,
+  "pending": 0,
+  "failures": 0,
+  "start": "2022-08-08T07:41:46.979Z",
+  "duration": 20674,
+  "file": "cypress\\integration\\examples\\Test2.js"
+}

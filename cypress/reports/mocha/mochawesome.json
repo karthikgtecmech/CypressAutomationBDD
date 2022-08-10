@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-09T05:02:28.654Z",
+    "end": "2022-08-09T05:02:38.693Z",
+    "duration": 10039,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bfd1cf9e-3fb8-4df5-99bc-07e87ea3c167",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\SessionTest.js",
+      "file": "cypress\\integration\\examples\\SessionTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bb5406fe-8a76-427c-801f-1cec26769700",
+          "title": "JWT Session",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Logged in through local storage",
+              "fullTitle": "JWT Session Logged in through local storage",
+              "timedOut": null,
+              "duration": 6707,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.loginAPI().then(function () {\n  cy.visit('https://rahulshettyacademy.com/client', {\n    onBeforeLoad: function onBeforeLoad(window) {\n      window.localStorage.setItem('token', Cypress.env('token'));\n    }\n  });\n});\ncy.get('button.btn.w-10.rounded').eq(1).click();\ncy.get(\"button[routerlink*='cart']\").click();\ncy.contains('Checkout').click();\ncy.get('[placeholder=\"Select Country\"]').type(\"ind\");\ncy.get('span.ng-star-inserted').each(function ($el, index, $list) {\n  if ($el.text().trim() == 'India') {\n    cy.wrap($el).click();\n  }\n});\ncy.get('.action__submit').click();\ncy.wait(2000);\ncy.get('.order-summary button').click();\ncy.readFile(Cypress.config(\"fileServerFolder\") + \"/cypress/downloads/order-invoice_karthik.csv\").then( /*#__PURE__*/function () {\n  var _ref = (0, _asyncToGenerator2[\"default\"])( /*#__PURE__*/_index[\"default\"].mark(function _callee(text) {\n    var csv;\n    return _index[\"default\"].wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            _context.next = 2;\n            return neatCSV(text);\n          case 2:\n            csv = _context.sent;\n            cy.window(csv);\n            console.log(csv);\n          case 5:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n  return function (_x) {\n    return _ref.apply(this, arguments);\n  };\n}()); //assert the text in the document using csv[0].Product Name <-- If there is space in the property use this method,\n//const actualProd = csv[0] [\"Product Name\"]\n//expect(productName).to.equal(actualProd)",
+              "err": {},
+              "uuid": "c34e3b1e-71c8-465e-9482-55391a8c9901",
+              "parentUUID": "bb5406fe-8a76-427c-801f-1cec26769700",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c34e3b1e-71c8-465e-9482-55391a8c9901"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6707,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "screenshotOnRunFailure": true,
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

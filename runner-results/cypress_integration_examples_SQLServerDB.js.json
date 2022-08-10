@@ -1,0 +1,10 @@
+{
+  "suites": 1,
+  "tests": 1,
+  "passes": 0,
+  "pending": 0,
+  "failures": 1,
+  "start": "2022-08-08T07:39:14.473Z",
+  "duration": 1883,
+  "file": "cypress\\integration\\examples\\SQLServerDB.js"
+}
